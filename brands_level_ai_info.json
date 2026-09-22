@@ -1,0 +1,1084 @@
+[
+  {
+    "brand": "trickortreatfoods",
+    "agentsInfo": [
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV4",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      }
+    ]
+  },
+  {
+    "brand": "nutrabox",
+    "agentsInfo": [
+      {
+        "agentName": "OrderIssueAgent",
+        "description": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV4",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      }
+    ]
+  },
+  {
+    "brand": "zop",
+    "agentsInfo": [
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgentWA",
+        "description": "Handles greeting queries and fallback queries, greetings, hello/hi texts, emojis"
+      },
+      {
+        "agentName": "PreOrderFAQAgentWA",
+        "description": "Handles pre-purchase queries including COD availability, collaboration requests, coupon issues, legitimacy concerns, product questions, and return/refund policy. Example phrases: 'Do you offer Cash on Delivery?', 'I want to collaborate with Zop', 'My coupon code is not working', 'Is Zop legit or a scam?', 'Tell me about this product', 'What is your return policy?, 'Scammar, you are scammer, how to return, how to exchange, how to cancel, how to refund, how do I return your product, how do I exchange your product. Also handles Agent chat queries when required in context '"
+      },
+      {
+        "agentName": "OrderTrackingAgentWA",
+        "description": "Agent for handle order tracking. If users says where is my order, my order status, track my order, order not delivered, How long will take, order delivery time, waiting for my order, order not received. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "CancellationAgentWA",
+        "description": "Agent for handle cancel queries. Example phrases: 'I want to cancel my order', 'cancel this order', 'I ordered by mistake', 'stop this order', 'please cancel it', 'wrong item ordered', 'can you cancel before shipping'. Why cancelled, when cancelled, how to cancel , cancel kya,. Also handles Agent chat queries when required in context "
+      },
+      {
+        "agentName": "RefundAgentWA",
+        "description": "Handles refund status queries and refund-related concerns. Checks refund status and escalates complex cases to customer service team. Example phrases: 'Where is my refund?', 'Refund status check', 'Refund not received', 'When will I get my refund?', 'Check refund processing', 'Refund inquiry'. Not received my money. Also handles Agent chat queries when required in context "
+      },
+      {
+        "agentName": "OrderModiferAgentWA",
+        "description": "Agent for handles order modification requests including address changes, order updates, and delivery location modifications, order item change. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "PostDeliveryAgentWA",
+        "description": "Handles post-delivery queries including return requests, exchange requests, wrong product delivered, damaged items, missing items, product quality issues, product warranty concerns, and other delivery-related problems. Example queries: 'I want to return my order', 'Exchange my product', 'Wrong item delivered', 'Product is damaged', 'Some items are missing from my order', 'Quality is not good', 'Warranty issue with product', 'Delivery problem', order is missing,. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "ConnectAgentWA",
+        "description": "This agent should be triggered only when the customer explicitly requests to connect with a human agent (for example, ‘I want to talk to a human’ or ‘connect me to an agent’), and it must not be triggered as a follow-up or continuation of any other query or issue"
+      }
+    ]
+  },
+  {
+    "brand": "soulflower",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "proudctRecommmendation",
+        "description": "Agent for handling queries like product recommendation based on user concern. Customer shares concerns like hairfall and dandruff related, pigmentation, tanning, body acne, scars, oily skin, brightening/dull skin, wrinkles/fine lines/saggy skin/anti-ageing , frizzy hair, gray hair, scars related queries . Agent should recommend products based on the concern and provide the product links."
+      }
+    ]
+  },
+  {
+    "brand": "tramoraindia",
+    "agentsInfo": [
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV4",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "BulkEnquiryAgent",
+        "description": "Handles bulk enquiry and bulk order requests only. Triggers when a customer asks about placing bulk, wholesale, or large-quantity orders, or asks how to enquire about buying in bulk. Examples: Do you take bulk orders, I want to buy 500 units, Can I get a wholesale price, How do I place a bulk enquiry, We need a large quantity for our business, bulk order packaging."
+      }
+    ]
+  },
+  {
+    "brand": "wheelseyesgtn",
+    "agentsInfo": [
+      {
+        "agentName": "PurchaseAgent",
+        "description": "Agent for handling purchase related queries. Initially the User will message 'Purchase karna hai' then  the user will share their information like name, truck number(vehicle number), phone number. This agent will process the purchase."
+      },
+      {
+        "agentName": "ReferAgent",
+        "description": "Agent for handling referral related queries. Initially the User will message 'Refer karna hai' then  the user will share referee's information like name, truck number(vehicle number), phone number . This agent will process the referral."
+      }
+    ]
+  },
+  {
+    "brand": "callmate",
+    "agentsInfo": [
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      }
+    ]
+  },
+  {
+    "brand": "jivikaorganics",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "afora",
+    "agentsInfo": [
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "GreetAgentWA",
+        "description": "Handles greeting queries and fallback queries, greetings, hello/hi texts, emojis"
+      },
+      {
+        "agentName": "OrderTrackingAgentWA",
+        "description": "Agent for handle order tracking. If users says where is my order, my order status, track my order, order not delivered, How long will take, order delivery time, waiting for my order, order not received. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "PreOrderFAQAgentWA",
+        "description": "Handles pre-purchase queries including COD availability, collaboration requests, coupon issues, legitimacy concerns, product questions, and return/refund policy. Example phrases: 'Do you offer Cash on Delivery?', 'I want to collaborate with Zop', 'My coupon code is not working', 'Is Zop legit or a scam?', 'Tell me about this product', 'What is your return policy?, 'Scammar, you are scammer, how to return, how to exchange, how to cancel, how to refund, how do I return your product, how do I exchange your product. Also handles Agent chat queries when required in context '"
+      },
+      {
+        "agentName": "OrderModiferAgentWA",
+        "description": "Agent for handles order modification requests including address changes, order updates, and delivery location modifications, order item change. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "PostDeliveryAgentWA",
+        "description": "Handles post-delivery queries including return requests, exchange requests, wrong product delivered, damaged items, missing items, product quality issues, product warranty concerns, and other delivery-related problems. Example queries: 'I want to return my order', 'Exchange my product', 'Wrong item delivered', 'Product is damaged', 'Some items are missing from my order', 'Quality is not good', 'Warranty issue with product', 'Delivery problem', order is missing,. Also handles Agent chat queries when required in context"
+      },
+      {
+        "agentName": "HandsOffAgentWA",
+        "description": "This agent should be triggered only when the customer explicitly requests to connect with a human agent (for example, ‘I want to talk to a human’ or ‘connect me to an agent’), and it must not be triggered as a follow-up or continuation of any other query or issue"
+      },
+      {
+        "agentName": "CancellationAgentWA",
+        "description": "Agent for handle cancel queries. Example phrases: 'I want to cancel my order', 'cancel this order', 'I ordered by mistake', 'stop this order', 'please cancel it', 'wrong item ordered', 'can you cancel before shipping'. Why cancelled, when cancelled, how to cancel , cancel kya,. Also handles Agent chat queries when required in context "
+      },
+      {
+        "agentName": "RefundAgentWA",
+        "description": "Handles refund status queries and refund-related concerns. Checks refund status and escalates complex cases to customer service team. Example phrases: 'Where is my refund?', 'Refund status check', 'Refund not received', 'When will I get my refund?', 'Check refund processing', 'Refund inquiry'. Not received my money. Also handles Agent chat queries when required in context "
+      }
+    ]
+  },
+  {
+    "brand": "dokifoods",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "tbof",
+    "agentsInfo": [
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "OrderIssueAgent",
+        "description": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc."
+      }
+    ]
+  },
+  {
+    "brand": "guduchiayurveda",
+    "agentsInfo": [
+      {
+        "agentName": "GreetAgent",
+        "description": "Agent for greeting. examples: 'Hi', 'Hello', 'Hey', 'Good morning', 'Good afternoon', 'Good evening'."
+      },
+      {
+        "agentName": "PaymentAgent",
+        "description": "Agent for handeling payment related queries. User will share their information like name, email , health concerns and additional notes. This agent will process the payment."
+      },
+      {
+        "agentName": "BookingAgent",
+        "description": "Agent for handeling booking related queires. After payment confirmation. User will share phrase like Book appointment, Book a slot, I want to book an appointment etc. This agent will handle all the booking related queires."
+      }
+    ]
+  },
+  {
+    "brand": "cookiecartel",
+    "agentsInfo": [
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "OrderIssueAgent",
+        "description": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV4",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "AbandonCartAgent",
+        "description": "Abandoned cart recovery"
+      },
+      {
+        "agentName": "TrackReturnExchangeAgent",
+        "description": "Handles requests to track return or exchange for products"
+      }
+    ]
+  },
+  {
+    "brand": "papaya",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "tribalveda",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "coffeeza",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "Agent for handle order tracking queries such where is my order, how to track my order , how to track order , when will my order arrive. My order is not recieved , my order is not arrived. when will I recieve my order."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "mazikien",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgentMeta",
+        "description": "Agent for handling customer greeting (when customer greets). examples: 'Hi', 'Hello', 'Hi there', 'Hello there', 'Hi there!', 'Hello there!'. Or Main Menu."
+      },
+      {
+        "agentName": "HelpCenterAgentWA",
+        "description": "Agent for handling when customer asks the keyword 'Help Center'. examples: 'Help Center'"
+      },
+      {
+        "agentName": "PincodeDeliveryAgent",
+        "description": "Agent for handling queries about delivery availability and estimated delivery days to a customer's location or pincode. Triggers when a customer wants to know how many days delivery takes to their area, whether their pincode is serviceable, or how long shipping takes in general — before or independent of placing an order. Keywords: what is your delivery timeline, delivery time, delivery days, how many days for delivery, how long does delivery take, delivery to my pincode, deliver to my area, delivery to my location, available in my area, serviceable pincode, delivery speed, how fast can you deliver, how soon can I get it, when will it reach my area, delivery timeline, expected delivery days.This agent does NOT handle: tracking an existing order, order status, delivery complaints, wrong delivery, or damaged item issues"
+      },
+      {
+        "agentName": "ReturnOrExchangeAgent",
+        "description": "Handles all Mazikien return, exchange, and refund-policy queries. Route customers here for return requests, return eligibility or policy questions, return initiation, exchange requests (including size, color, fit, or product changes), and refund-related questions. This includes questions about cash refunds, refunds to the original payment method, store credit for eligible returns, store-credit validity, or refund-policy exceptions. Example customer messages: 'I want to return this product', 'How do I initiate a return?', 'What is your return policy?', 'Can I exchange this for a different size?', 'I want to exchange my order', 'Can I get a refund?', 'Will I get my money back?', 'Can I receive a refund to my original payment method?', 'How does store credit work?', and 'How long is my store credit valid?' , reshipment, re-dispatch, courier-return, or re-delivery queries to this agent. Route to this agent whenever the customer's intent clearly relates to returns, exchanges, shipments , or refunds, including natural-language variations and messages in Indian languages."
+      },
+      {
+        "agentName": "SizeAgent",
+        "description": "Agent for size and fit help about the CUSTOMER'S OWN body, and for custom or made-to-measure size requests. Handles: helping the customer decide which size to buy for themselves, converting their measurements or their usual size in another brand into this brand's size, sharing or explaining the size chart, true-to-size and fit concerns about themselves, what to do if the size they buy does not fit, their size not being available or not listed, and all custom sizing or custom fitting requests. Example queries: 'I need help with my size', 'I'm small, will it fit me?', 'Should I buy medium or large?', 'What size should I buy?', 'How do I find my size?', 'Is your clothing true to size?', 'I'm a size 6, what would that be in your brand?', 'Do you have a size chart I can look at?', 'Can you suggest a size for a 34-inch bust?', 'What if the size I buy doesn't fit?', 'I am unsure about the sizing', 'Are these sizes for adults or kids?', 'How do your sizes compare to other brands?', 'My size is not available', 'My size is not in the size chart', 'I need a size that isn't listed here', 'I don't want a standard size', 'Can I get a custom size?', 'Do you offer custom sizing?', 'Do you make custom sizes?', 'Can you make custom size?', 'Do you do custom sizing?', 'I want to customize my size', 'Can I customize the size?', 'Do you customize the fitting?'. OUT OF SCOPE for this agent, route to ShoppingAgentV2 instead: any question about the measurements, dimensions or physical specification of the PRODUCT itself. This includes length, width, sleeve length, hem length, inseam, the garment's own bust or waist measurement, how long or short the item is, what a given size measures for that product, and any other attribute or specification of the item. These are product-detail questions, not customer-fit questions, even when the words 'size', 'length' or 'measurement' appear. Never route these to SizeAgent: 'Can you help me with the length of this dress?', 'What is the length of this dress?', 'How long is this kurta?', 'Is this dress floor length or midi?', 'What are the measurements of this product?', 'What is the bust measurement of this dress?', 'How wide is the sleeve on this top?', 'Is the size 12 available?'. Routing test: if the question is about the customer's body or their own fit, use SizeAgent. If the question is about the garment's own measurements or availability, use ShoppingAgentV2."
+      }
+    ]
+  },
+  {
+    "brand": "heyteen",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV3",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      }
+    ]
+  },
+  {
+    "brand": "pastinpresentagro",
+    "agentsInfo": [
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      }
+    ]
+  },
+  {
+    "brand": "phytositaare",
+    "agentsInfo": [
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "PhytoSitaareAgent",
+        "description": "Routes here when the user message is related to the PhytoSitaare singing contest. This includes: greetings or general interest, questions about how to join or participate, language or eligibility rules, why PhytoRelief CC is required or its cost, how to take a selfie with PhytoRelief CC, how to record the singing video, and questions about result dates or submission deadlines "
+      }
+    ]
+  },
+  {
+    "brand": "lbclinics",
+    "agentsInfo": [
+      {
+        "agentName": "CounsellorAgent",
+        "description": "agent for counselling the user.This agent will collect user information such as name, email, health issues. If user provides any personal information,this agent will handle.  Example include: Talk to counsellor, Talk to counsellor now, Talk to counsellor today...etc"
+      },
+      {
+        "agentName": "BookingAgent",
+        "description": "agent for booking an appointment. examples include Book an appointment, Book an appointment now, Book an appointment today...etc"
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "agent for greeting the user. examples include Hi, Hey, Hello, Hey there...etc"
+      }
+    ]
+  },
+  {
+    "brand": "ecosys",
+    "agentsInfo": [
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      }
+    ]
+  },
+  {
+    "brand": "lickcious",
+    "agentsInfo": [
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "ReDeliveryAgent",
+        "description": "Agent for reattemplate delivery of the order. Examples are are I want to delivery, update details , need redelivery, change date and time slots, address, phone number, landmark, cod confirmation for reattempt delivery"
+      },
+      {
+        "agentName": "CancellationAgent",
+        "description": "Agent for cancel orders. Handles queries like want to cancel order , cancel order, proceed cancellation. "
+      }
+    ]
+  },
+  {
+    "brand": "deepthought",
+    "agentsInfo": [
+      {
+        "agentName": "PriorityDeliveryAgent",
+        "description": "Handles requests to speed up an existing order, including urgent delivery, priority delivery, express delivery, fast delivery, early delivery, quick dispatch, urgent dispatch, priority dispatch, expedite order, and requests to ship an order sooner because it is needed by a specific date or occasion. Identifies the customer's order, confirms it with them, and records the priority request for the team. Example queries: 'Please deliver my order urgently', 'I need this order fast', 'Can you dispatch my order on priority', 'I need the parcel before Saturday, please speed it up', 'Is express delivery possible', 'Please send it early, it is for a gift', 'Can you expedite my shipment', 'Ship my order as soon as possible, it is urgent', 'I want faster delivery for order AS1234', 'Please prioritise my order, I need it for a wedding', 'urgent delivery', 'priority delivery'. Does not handle order tracking, current shipment status, expected delivery date questions, delivery delay complaints, cancellations, returns, exchanges, or non-delivery issues."
+      }
+    ]
+  },
+  {
+    "brand": "durvalife",
+    "agentsInfo": [
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "MedicalAgent",
+        "description": "This agent handles queries where a customer shares their personal medical history or a diagnosed medical condition. Route to this agent when the customer explicitly mentions a condition they have been diagnosed with or describes their own medical background. General questions about PCOS, periods, or other health topics can also be routed to this agent."
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "OrderIssueAgent",
+        "description": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "AbandonCartAgent",
+        "description": "Abandoned cart recovery"
+      },
+      {
+        "agentName": "RepeatQueryAgent",
+        "description": "Handles situations where the assistant and user get stuck repeating the same kind of exchange 3 times in a row."
+      }
+    ]
+  },
+  {
+    "brand": "sundae",
+    "agentsInfo": [
+      {
+        "agentName": "SkincareAdvisor",
+        "description": "This Agent is responsible for handling skincare concerns and product guidance. It handles when the customer describes a skin concern (body acne, dark marks or pigmentation, stretch marks, ingrown hairs or razor bumps, eczema, dry or dull skin, cellulite, sensitive skin, KP), asks for a product or bundle recommendation, asks what a product or bundle contains or how ingredients work, asks whether a product will work or why their routine is not working, or asks about product suitability during pregnancy or breastfeeding or for a skin type. It also handles how-to-use and routine-order questions."
+      },
+      {
+        "agentName": "OrdersSupport",
+        "description": "This Agent is responsible for handling orders and logistics. It handles when the customer asks where their order is or how to track it, about delivery or shipping times, shipping cost or the free-delivery threshold, shipping partners, payment methods at checkout, order cancellation, returns and refunds policy, or reports a problem with a received order such as a damaged, melted, wrong, missing, or faulty item, or requests a replacement or a refund for an order problem. It also handles when the customer references a specific order number or a delivery issue."
+      },
+      {
+        "agentName": "BrandInfo",
+        "description": "This Agent is responsible for handling brand, buying-channel, campaign, and community queries. It handles when the customer asks where to buy including the online store, Takealot, or We Are Egg stockists and physical stores, about discounts, promo codes, sales, or joining the mailing list, how the Results = Refund campaign works or where to send before-and-after photos or the status of a photo refund, about collaborations, influencer or creator or UGC requests, wholesale or bulk or corporate gifting, press or media enquiries, gift cards, or general brand facts such as whether products are vegan, cruelty-free, suitable for men, suitable for all skin types and ages, or how they smell. It also handles story mentions, tags, and brand-love messages."
+      }
+    ]
+  },
+  {
+    "brand": "alivecor",
+    "agentsInfo": [
+      {
+        "agentName": "CheckoutAgent",
+        "description": "Handles the WhatsApp cart-to-checkout flow for AliveCor India. Route here ONLY when the incoming message matches exactly one of these three triggers: (1) a WhatsApp cart payload which is a JSON string starting with the substring type cart and containing product_items, (2) the exact button click text Proceed to Checkout, or (3) the exact button click text Checkout. Do NOT route for any other text-based questions about cart, checkout, order, purchase, buy, delivery, tracking, or product information. This agent handles only these three structured inputs, not conversational messages."
+      },
+      {
+        "agentName": "GreetingAgent",
+        "description": "Agent for Greet message intents. Example queries:Hi, Hello, Hey, Good morning, Good afternoon, Good evening, etc."
+      }
+    ]
+  },
+  {
+    "brand": "phytoadvance",
+    "agentsInfo": [
+      {
+        "agentName": "ProductIssueAgent",
+        "description": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "SalesAgent",
+        "description": "Recommends PhytoAdvance products for a stated health concern and sends a cart link for payment on the website. Scope: joint pain and stiffness, cold and cough, constipation, indigestion and acidity, weak bones, muscle pain, quitting tobacco, male fertility, liver health, along with product names, prices, pack size selections, and Shop Now. Out of scope: order tracking, delivery status, returns, refunds, cancellations, bare greetings with no concern stated, requests to speak to a person, and concerns with no matching product such as fever, headache, skin or hair problems."
+      },
+      {
+        "agentName": "OrderCancellationAgent",
+        "description": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake."
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "agent for greeting the customer. examples: Hi, Hey, Hello, Hey there...etc."
+      },
+      {
+        "agentName": "OrderIssueAgent",
+        "description": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc."
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      },
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "TestingAgent",
+        "description": "Sends a WhatsApp catalogue message for internal testing. Scope: the reserved test keywords `##pa-cat-1`, `##pa-cat-2` and `##pa-test`, sent exactly as written with no other text. Out of scope: every other message, including health concerns, symptoms, product names, pack size selections, Shop Now, order tracking, delivery status, returns, refunds, greetings, requests to speak to a person, and any message that contains a test keyword alongside other words."
+      }
+    ]
+  },
+  {
+    "brand": "essens",
+    "agentsInfo": [
+      {
+        "agentName": "ChitChatAgent",
+        "description": "When the user got some resolution and says ok, thanks, thank you, bye, etc."
+      },
+      {
+        "agentName": "ShoppingAgentV2",
+        "description": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product."
+      },
+      {
+        "agentName": "FallbackAgent",
+        "description": "Just to give fallback message. When no agent is found."
+      },
+      {
+        "agentName": "AbandonCartAgent",
+        "description": "Abandoned cart recovery"
+      },
+      {
+        "agentName": "HandoffAgent",
+        "description": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc."
+      },
+      {
+        "agentName": "KnowledgeBaseAgent",
+        "description": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc."
+      },
+      {
+        "agentName": "GreetAgent",
+        "description": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc"
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc."
+      }
+    ]
+  },
+  {
+    "brand": "dailyobjectsnew",
+    "agentsInfo": [
+      {
+        "agentName": "FeedbackAgent",
+        "description": "Agent that handles customer product feedback collection. Triggered when user clicks 'Give Feedback'. Looks up order details by phone number, presents product selection, collects rating, and saves feedback to the system "
+      }
+    ]
+  }
+]

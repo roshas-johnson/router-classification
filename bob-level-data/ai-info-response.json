@@ -1,0 +1,31 @@
+{
+  "add_tags": true,
+  "agentUrl": "https://ai-agent-v2.bobot.in",
+  "channels": {
+    "whatsapp": ["PaymentAgent"]
+  },
+  "reranking": {
+    "top_k": 50,
+    "llm_based": {
+      "enabled": true
+    }
+  },
+  "prompt_map": {
+    "shopping_agent": "v2"
+  },
+  "description": "Main agent for Dr Robin. Handles greetings and payment processing. Integrates with GreetAgent and PaymentAgent for specific tasks like greeting users and processing payments. ",
+  "llm_provider": {
+    "model": "gemini-2.5-pro",
+    "provider": "gemini"
+  },
+  "external_flows": [
+    {
+      "executor": "simstudio",
+      "agent_name": "PaymentAgent",
+      "description": "Agent for handling payment related queries. User will share their information like name, email , health concerns and additional notes. This agent will process the payment. This agnet handles all follow up queries regard plan selections, doubts, payment queries etc.",
+      "workflow_id": "SIM_WORKFLOW_ID",
+      "trigger_phrases": [],
+      "workflow_api_key": "SIM_WORKFLOW_API_KEY"
+    }
+  ]
+}

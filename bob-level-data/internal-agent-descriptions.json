@@ -1,0 +1,16 @@
+{
+  "GreetAgent": "Just handle Initial greetings. Nothing else. Hey, Hi, Hello, Hey there. Good Morning, etc",
+  "ChitChatAgent": "When the user got some resolution and says ok, thanks, thank you, bye, etc.",
+  "ShoppingAgent": "Handles product searches, usages,showing products,checkout,address asking,placing order using natural language. Do not use this for general inquiries. Only use this if user is asking about buying a product, prices, information about the product, how to use a product, benefits, features, related queries. Do not always generate search results. Always respond according to the user query. For example, if user asks 'What is the price of product X?', then answer with the price. If user asks 'What is the product X?', then answer with the product information. Never generate search results for product queries. Do not use this for product related issues like size issues, product not working, product not as described, or complications after using the product.",
+  "KnowledgeBaseAgent": "Answers questions about policies, generic discounts, general information, Frequently Asked Questions, and other knowledge base queries, shipping (which is also called as tat), returns, refund policies, and exchanges, warranty, store addresses, product guides, collaborations, offers, discounts, deals, information about {brand} etc. Always use this for coupon codes, discounts, deals, minimum order value, etc. Do not use this for product related queries like product information, benefits, features, etc.",
+  "OrderTrackingAgent": "For order status, tracking updates, delivery ETA, tat (turnaround time), and order-related issues. Examples: Where is my order, where is the product ? Track my order, My order is getting delayed, I'm frustrated with the delay of my order. etc. Never use this for returns, refunds, exchanges, etc.",
+  "OrderCancellationAgent": "For order cancellation requests. Not for refunds and returns. I want to cancel my order, i dont want this, cancel my order, ordered by mistake.",
+  "HandoffAgent": "For handoff to human agents. If the query is explicitly about talking human agent. Eg: I want to talk to agent, connect me with human agent, agent chat, chat with agent, chat with support, agent support, connect with us, connect with support, etc. Or if the user is facing an issue in placing an order, payment issues,  issues, etc.",
+  "OrderIssueAgent": "For issues with the order BEFORE usage: damaged products, wrong items shipped, missing items, delayed delivery, etc.",
+  "ProductIssueAgent": "Handles post-usage product issues like , ineffectiveness, no results, size issues, product not working, product not as described, or complications after using the product.",
+  "RaiseReturnExchangeAgent": "Handles requests to raise return or exchange for products.",
+  "TrackReturnExchangeAgent": "Handles requests to track return or exchange for products",
+  "AbandonCartAgent": "Abandoned cart recovery",
+  "RepeatQueryAgent": "Handles situations where the assistant and user get stuck repeating the same kind of exchange 3 times in a row.",
+  "FallbackAgent": "Just to give fallback message. When no agent is found."
+}

@@ -11,3 +11,12 @@ __pycache__/
 # export outputs
 router_runs_raw.json
 router_dump.json
+
+# data files
+data/
+
+# exported LangSmith logs
+test_data/router_runs_2026-09-19_2026-09-21.json
+
+# built eval dataset
+eval-data/routing_dataset.json

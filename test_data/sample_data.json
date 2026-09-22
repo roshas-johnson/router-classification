@@ -1,250 +1,124 @@
 {
   "meta": {
-    "note": "One row per USER message. History is anonymized (role user/assistant, text only) so the model can't cheat off past agent labels. 'label' is SILVER (the LLM router's pick, from metadata.agent) — build a human-labeled gold subset separately. 'previous_agent' is a SEPARATE silver feature (prior turn's label, name-normalized, null on turn 1) for the with/without ablation; it is NOT inside history. 'available_agents' is the channel-scoped snapshot AS OF decision time; descriptions live in agent_catalog.",
-    "brand": "zop",
-    "label_source": "llm_silver"
+    "channel": "whatsapp",
+    "note": "Inputs to Jev/Laya = current_message + conversation_history + previous_agent + available_agents. available_agents is NOT stored here — it is resolved at runtime from `brand` (+ channel=whatsapp): internal agents from the hardcoded routing_agent.py descriptions, external flows from that brand's aiInfo. NOT passed to the model: id, sender, brand, LLM_OUTPUT. LLM_OUTPUT is the SILVER label. History roles anonymized."
   },
 
-  "agent_catalog": {
-    "GreetAgent": "Opening greetings only: hi, hello, hey, good morning. Nothing else.",
-    "ChitChatAgent": "Closings/acknowledgements after resolution: ok, thanks, bye, that's all.",
-    "OrderTrackingAgent": "Order status, tracking, delivery ETA/TAT. Not returns, refunds, or cancellations.",
-    "OrderCancellationAgent": "Cancelling an order, or asking why an order was cancelled. Not refunds or returns.",
-    "KnowledgeBaseAgent": "Policies, FAQs, shipping/TAT, COD availability, store info, and GENERAL discounts/coupons not tied to a specific product.",
-    "ShoppingAgent": "Product discovery, price, details, ingredients, usage, purity/authenticity, product-specific discounts, buying/checkout.",
-    "HandoffAgent": "Explicit request for a human agent; or address/contact changes; or payment/order-placement problems.",
-    "BulkEnquiryAgent": "Bulk, wholesale, corporate, or large-quantity order enquiries.",
-    "FallbackAgent": "Nothing else fits."
-  },
-
-  "channel_agents": {
-    "whatsapp": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-    "instagram": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","FallbackAgent"]
-  },
-
-  "examples": [
+  "routing_dataset": [
     {
-      "id": "zop-394717-01",
-      "session_id": "917899658001-zop-394717",
+      "id": "run-a1b2c3-0001",
+      "sender": "919000000001-zop",
       "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 1,
-      "current_message": "Hii",
-      "conversation_history": [],
-      "previous_agent": null,
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "GreetAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-394717-02",
-      "session_id": "917899658001-zop-394717",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 2,
-      "current_message": "I want to know about COD options",
-      "conversation_history": [
-        {"role": "user", "content": "Hii"},
-        {"role": "assistant", "content": "Hi, thank you for reaching out to Zop. Could you please let us know what issue you're facing?"}
-      ],
-      "previous_agent": "GreetAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "KnowledgeBaseAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-394717-03",
-      "session_id": "917899658001-zop-394717",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 3,
-      "current_message": "I want to track my order",
-      "conversation_history": [
-        {"role": "user", "content": "Hii"},
-        {"role": "assistant", "content": "Hi, thank you for reaching out to Zop. Could you please let us know what issue you're facing?"},
-        {"role": "user", "content": "I want to know about COD options"},
-        {"role": "assistant", "content": "At the moment, we don't offer COD on Zop. All orders can be placed through our secure prepaid options. Would you like to be connected with our support team?"}
-      ],
-      "previous_agent": "KnowledgeBaseAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "OrderTrackingAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-394717-04",
-      "session_id": "917899658001-zop-394717",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 4,
-      "current_message": "This is my phone number 9351505255",
-      "conversation_history": [
-        {"role": "user", "content": "Hii"},
-        {"role": "assistant", "content": "Hi, thank you for reaching out to Zop. Could you please let us know what issue you're facing?"},
-        {"role": "user", "content": "I want to know about COD options"},
-        {"role": "assistant", "content": "At the moment, we don't offer COD on Zop. Would you like to be connected with our support team?"},
-        {"role": "user", "content": "I want to track my order"},
-        {"role": "assistant", "content": "I'm sorry, but I couldn't find any orders on 917899658001. Please share the 10-digit phone number you used while placing the order."}
-      ],
-      "previous_agent": "OrderTrackingAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "OrderTrackingAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-394717-05",
-      "session_id": "917899658001-zop-394717",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 5,
-      "current_message": "Yes that's my order",
-      "conversation_history": [
-        {"role": "user", "content": "I want to know about COD options"},
-        {"role": "assistant", "content": "At the moment, we don't offer COD on Zop. Would you like to be connected with our support team?"},
-        {"role": "user", "content": "I want to track my order"},
-        {"role": "assistant", "content": "I couldn't find any orders on 917899658001. Please share the 10-digit phone number you used."},
-        {"role": "user", "content": "This is my phone number 9351505255"},
-        {"role": "assistant", "content": "I found one order on 9351505255. Order: ZOP#1391106. Could you please confirm this is the order you're looking for?"}
-      ],
-      "previous_agent": "OrderTrackingAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "OrderTrackingAgent",
-      "gold_label": null
-    },
-
-    {
-      "id": "zop-394890-01",
-      "session_id": "919812345678-zop-394890",
-      "brand": "zop",
-      "channel": "whatsapp",
       "turn_index": 1,
       "current_message": "Hi",
       "conversation_history": [],
       "previous_agent": null,
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "GreetAgent",
-      "gold_label": null
+      "LLM_OUTPUT": "GreetAgent"
     },
     {
-      "id": "zop-394890-02",
-      "session_id": "919812345678-zop-394890",
+      "id": "run-a1b2c3-0002",
+      "sender": "919000000001-zop",
       "brand": "zop",
-      "channel": "whatsapp",
       "turn_index": 2,
-      "current_message": "I want to cancel my order ZOP#1391106",
+      "current_message": "where is my order",
       "conversation_history": [
-        {"role": "user", "content": "Hi"},
-        {"role": "assistant", "content": "Hi, welcome to Zop! How can I help you today?"}
+        { "role": "user", "content": "Hi" },
+        {
+          "role": "assistant",
+          "content": "Hi, welcome to Zop! How can I help you today?"
+        }
       ],
       "previous_agent": "GreetAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "OrderCancellationAgent",
-      "gold_label": null
+      "LLM_OUTPUT": "OrderTrackingAgent"
     },
     {
-      "id": "zop-394890-03",
-      "session_id": "919812345678-zop-394890",
+      "id": "run-a1b2c3-0003",
+      "sender": "919000000001-zop",
       "brand": "zop",
-      "channel": "whatsapp",
       "turn_index": 3,
-      "current_message": "Actually just connect me with an agent",
+      "current_message": "9000012345",
       "conversation_history": [
-        {"role": "user", "content": "Hi"},
-        {"role": "assistant", "content": "Hi, welcome to Zop! How can I help you today?"},
-        {"role": "user", "content": "I want to cancel my order ZOP#1391106"},
-        {"role": "assistant", "content": "I can help with that. May I know the reason for the cancellation?"}
+        { "role": "user", "content": "Hi" },
+        {
+          "role": "assistant",
+          "content": "Hi, welcome to Zop! How can I help you today?"
+        },
+        { "role": "user", "content": "where is my order" },
+        {
+          "role": "assistant",
+          "content": "Sure! Please share the 10-digit phone number used while placing the order."
+        }
       ],
-      "previous_agent": "OrderCancellationAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "HandoffAgent",
-      "gold_label": null
-    },
-
-    {
-      "id": "zop-395001-01",
-      "session_id": "919700011122-zop-395001",
-      "brand": "zop",
-      "channel": "instagram",
-      "turn_index": 1,
-      "current_message": "do you have vitamin c serum?",
-      "conversation_history": [],
-      "previous_agent": null,
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","FallbackAgent"],
-      "label": "ShoppingAgent",
-      "gold_label": null
+      "previous_agent": "OrderTrackingAgent",
+      "LLM_OUTPUT": "OrderTrackingAgent"
     },
     {
-      "id": "zop-395001-02",
-      "session_id": "919700011122-zop-395001",
+      "id": "run-a1b2c3-0004",
+      "sender": "919000000001-zop",
       "brand": "zop",
-      "channel": "instagram",
-      "turn_index": 2,
-      "current_message": "any discounts?",
-      "conversation_history": [
-        {"role": "user", "content": "do you have vitamin c serum?"},
-        {"role": "assistant", "content": "Yes! Our Vitamin C Serum (30ml) is available for Rs 649. Would you like the link?"}
-      ],
-      "previous_agent": "ShoppingAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","FallbackAgent"],
-      "label": "KnowledgeBaseAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-395001-03",
-      "session_id": "919700011122-zop-395001",
-      "brand": "zop",
-      "channel": "instagram",
-      "turn_index": 3,
+      "turn_index": 4,
       "current_message": "ok thanks",
       "conversation_history": [
-        {"role": "user", "content": "do you have vitamin c serum?"},
-        {"role": "assistant", "content": "Yes! Our Vitamin C Serum (30ml) is available for Rs 649. Would you like the link?"},
-        {"role": "user", "content": "any discounts?"},
-        {"role": "assistant", "content": "You can use code WELCOME10 for 10% off your first order."}
+        { "role": "user", "content": "where is my order" },
+        {
+          "role": "assistant",
+          "content": "Sure! Please share the 10-digit phone number used while placing the order."
+        },
+        { "role": "user", "content": "9000012345" },
+        {
+          "role": "assistant",
+          "content": "I found order ZOP#1391106, out for delivery today by 7 PM."
+        }
+      ],
+      "previous_agent": "OrderTrackingAgent",
+      "LLM_OUTPUT": "ChitChatAgent"
+    },
+    {
+      "id": "run-d4e5f6-0001",
+      "sender": "919000000002-zop",
+      "brand": "zop",
+      "turn_index": 1,
+      "current_message": "do you have almond oil",
+      "conversation_history": [],
+      "previous_agent": null,
+      "LLM_OUTPUT": "ShoppingAgent"
+    },
+    {
+      "id": "run-d4e5f6-0002",
+      "sender": "919000000002-zop",
+      "brand": "zop",
+      "turn_index": 2,
+      "current_message": "any coupons?",
+      "conversation_history": [
+        { "role": "user", "content": "do you have almond oil" },
+        {
+          "role": "assistant",
+          "content": "Yes! Cold-Pressed Almond Oil (200ml) is Rs 499. Want the link?"
+        }
+      ],
+      "previous_agent": "ShoppingAgent",
+      "LLM_OUTPUT": "KnowledgeBaseAgent"
+    },
+    {
+      "id": "run-d4e5f6-0003",
+      "sender": "919000000002-zop",
+      "brand": "zop",
+      "turn_index": 3,
+      "current_message": "connect me to an agent",
+      "conversation_history": [
+        { "role": "user", "content": "do you have almond oil" },
+        {
+          "role": "assistant",
+          "content": "Yes! Cold-Pressed Almond Oil (200ml) is Rs 499. Want the link?"
+        },
+        { "role": "user", "content": "any coupons?" },
+        {
+          "role": "assistant",
+          "content": "You can use WELCOME10 for 10% off your first order."
+        }
       ],
       "previous_agent": "KnowledgeBaseAgent",
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","FallbackAgent"],
-      "label": "ChitChatAgent",
-      "gold_label": null
-    },
-
-    {
-      "id": "zop-395110-01",
-      "session_id": "919655544433-zop-395110",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 1,
-      "current_message": "I want to order 500 units for my company",
-      "conversation_history": [],
-      "previous_agent": null,
-      "context_event": null,
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "BulkEnquiryAgent",
-      "gold_label": null
-    },
-    {
-      "id": "zop-395210-01",
-      "session_id": "919611122233-zop-395210",
-      "brand": "zop",
-      "channel": "whatsapp",
-      "turn_index": 1,
-      "current_message": "Yes I'm still interested",
-      "conversation_history": [],
-      "previous_agent": null,
-      "context_event": "abandonedCart",
-      "available_agents": ["GreetAgent","ChitChatAgent","OrderTrackingAgent","OrderCancellationAgent","KnowledgeBaseAgent","ShoppingAgent","HandoffAgent","BulkEnquiryAgent","FallbackAgent"],
-      "label": "ShoppingAgent",
-      "gold_label": null
+      "LLM_OUTPUT": "HandoffAgent"
     }
   ]
 }

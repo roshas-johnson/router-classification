@@ -1,0 +1,15 @@
+[
+  {
+    "brand": "zop",
+    "agentsInfo": [
+      {
+        "agentName": "GreetAgent",
+        "description": "GreetAgent propmt is here"
+      },
+      {
+        "agentName": "OrderTrackingAgent",
+        "description": "OrderTrackingAgent propmt is here"
+      }
+    ]
+  }
+]
