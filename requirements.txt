@@ -1,0 +1,10 @@
+# LangSmith export (current step)
+langsmith>=0.1.0
+python-dotenv>=1.0.0
+
+# Added later as the eval progresses:
+# pandas            # dataframes for the comparison / metrics
+# scikit-learn      # precision/recall/F1, confusion matrix, calibration
+# matplotlib        # risk-coverage curves, confusion matrix plots
+# typesafe-sdk      # Jev arm (hosted API)
+# laya              # run in Colab (needs GPU) — not installed locally
