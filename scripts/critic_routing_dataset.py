@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from collections import defaultdict
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "test_data" / "router_runs_2026-09-19_2026-09-21.json"
 OUT = ROOT / "eval-data" / "routing_dataset.json"
 

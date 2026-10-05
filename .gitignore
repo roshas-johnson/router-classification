@@ -1,12 +1,34 @@
 # secrets
 .env
+.env.*
+!.env.example
 
 # virtual env
 .venv/
+venv/
+env/
 
 # python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# jupyter
+.ipynb_checkpoints/
+notebooks/*.html
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# logs
+*.log
 
 # export outputs
 router_runs_raw.json

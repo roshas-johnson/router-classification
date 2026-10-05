@@ -1,0 +1,89 @@
+{
+  "agent": {
+    "type": "choice",
+    "instructions": "Pick the agent that should handle the customer's current WhatsApp message. Prefer the active agent if the message still fits it; switch if it clearly belongs to another agent.",
+    "criteria": {
+      "GreetAgentWA": {
+        "what": "Greetings, hello/hi texts, emojis, and generic fallback openers",
+        "examples": ["hi", "hello", "hey 👋", "good morning"]
+      },
+      "ChitChatAgent": {
+        "what": "Casual, non-actionable talk or emotional venting with no specific order, product, or support task",
+        "not_for": "Any concrete request to track, cancel, refund, modify, return, or reach a human",
+        "examples": [
+          "you guys are the best",
+          "lol",
+          "worst experience ever",
+          "ok whatever"
+        ]
+      },
+      "PreOrderFAQAgentWA": {
+        "what": "Pre-purchase and policy questions: COD, coupons, product questions, collaborations, legitimacy/scam concerns, and HOW-TO/policy questions about returns, refunds, exchanges or cancellations",
+        "not_for": "Actually cancelling an order (CancellationAgentWA), checking a refund's status (RefundAgentWA), or reporting a damaged/returned item (PostDeliveryAgentWA)",
+        "examples": [
+          "Do you offer Cash on Delivery?",
+          "coupon not working",
+          "Is Zop legit or a scam?",
+          "you are scammer",
+          "how do I return your product?"
+        ]
+      },
+      "OrderTrackingAgentWA": {
+        "what": "Where an order is, its status, delays, or delivery time",
+        "examples": [
+          "where is my order",
+          "track my order",
+          "order not delivered",
+          "how long will it take",
+          "why is it so slow"
+        ]
+      },
+      "CancellationAgentWA": {
+        "what": "Requests to cancel an order, or why/when/how an order was cancelled",
+        "not_for": "Refund status after a cancellation (RefundAgentWA)",
+        "examples": [
+          "I want to cancel my order",
+          "cancel this order",
+          "ordered by mistake",
+          "why was it cancelled"
+        ]
+      },
+      "OrderModiferAgentWA": {
+        "what": "Modifying an existing order: address change, delivery-location change, or changing the ordered item",
+        "examples": [
+          "change my delivery address",
+          "update my order",
+          "change the size I ordered"
+        ]
+      },
+      "RefundAgentWA": {
+        "what": "Status of a refund or money not yet received back",
+        "not_for": "Refund policy or how-to questions (PreOrderFAQAgentWA)",
+        "examples": [
+          "where is my refund",
+          "refund not received",
+          "when will I get my money back"
+        ]
+      },
+      "PostDeliveryAgentWA": {
+        "what": "Problems with a delivered order: returns, exchanges, wrong/damaged/missing items, quality or warranty",
+        "examples": [
+          "return my order",
+          "exchange my product",
+          "wrong item delivered",
+          "product is damaged",
+          "items missing"
+        ]
+      },
+      "ConnectAgentWA": {
+        "what": "ONLY an explicit request to speak with a human agent",
+        "not_for": "Any topic where the customer has not directly asked for a human; never as a follow-up to another issue",
+        "examples": [
+          "I want to talk to a human",
+          "connect me to an agent",
+          "let me speak to a real person"
+        ]
+      }
+    }
+  }
+}

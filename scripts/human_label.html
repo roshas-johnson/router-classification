@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Routing — Human Labeling</title>
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#0f141a; --card:#161d26; --ink:#e6eaf0; --muted:#93a0b0; --line:#28313d;
+    --accent:#4b86f0; --accent-soft:#1b2942; --good:#3fbf77; --warn:#e0a24a; --warn-soft:#2b2415;
+    --user:#1b2942; --asst:#1d242e; --panel:#12181f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  header{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 16px;box-shadow:0 1px 6px rgba(0,0,0,.4)}
+  .hrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+  .hrow h1{font-size:16px;margin:0;font-weight:700}
+  .bar{flex:1;min-width:160px;height:10px;background:#232c37;border-radius:6px;overflow:hidden}
+  .bar>span{display:block;height:100%;width:0;background:var(--good);transition:width .2s}
+  .count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;white-space:nowrap}
+  .nav{display:flex;align-items:center;gap:8px}
+  button{font:inherit;border:1px solid var(--line);background:#1b222c;color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer}
+  button:hover{background:#212a35}
+  button:disabled{opacity:.4;cursor:default}
+  button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .wrap{max-width:900px;margin:16px auto;padding:0 16px 80px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .card.done{border-color:#2f5c42}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+  .tag{font-size:12px;padding:2px 9px;border-radius:20px;background:#232c37;color:var(--muted)}
+  .tag.brand{background:#1b2942;color:#79a6f5}
+  .tag.prev{background:#2a2140;color:#b491f0}
+  .idx{margin-left:auto;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .hist{margin:8px 0;display:flex;flex-direction:column;gap:6px}
+  .bub{max-width:82%;padding:8px 11px;border-radius:12px;font-size:14px;white-space:pre-wrap;word-break:break-word}
+  .bub.user{align-self:flex-end;background:var(--user);border-bottom-right-radius:3px}
+  .bub.asst{align-self:flex-start;background:var(--asst);border-bottom-left-radius:3px}
+  .bub .who{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+  .nohist{color:var(--muted);font-size:13px;font-style:italic;margin:6px 0}
+  .cur{background:#241d0f;border:1px solid #4a3d1a;border-radius:10px;padding:10px 12px;margin:10px 0}
+  .cur .lbl{font-size:11px;color:var(--warn);text-transform:uppercase;letter-spacing:.05em;font-weight:700;margin-bottom:3px}
+  .cur .msg{font-size:16px;font-weight:600;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+  .opts{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+  .opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:9px;padding:9px 11px;cursor:pointer}
+  .opt:hover{background:#1c242e}
+  .opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+  .opt input{margin-top:3px;accent-color:var(--accent)}
+  .opt .an{font-weight:600}
+  .opt .ad{color:var(--muted);font-size:13px;margin-top:1px}
+  .opt.none{border-style:dashed}
+  .opt.none.sel{border-color:var(--warn);background:var(--warn-soft)}
+  .notes{margin-top:8px;width:100%;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font:inherit;resize:vertical;min-height:34px;background:var(--panel);color:var(--ink)}
+  .saved{font-size:12px;color:var(--good);margin-top:6px;height:16px}
+  footer{position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--line);padding:8px 16px}
+  .frow{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;justify-content:center}
+  .jump{width:56px;text-align:center;border:1px solid var(--line);border-radius:8px;padding:5px;background:var(--panel);color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <h1>Routing — Human Labeling</h1>
+    <div class="bar"><span id="barfill"></span></div>
+    <div class="count" id="count">0 / 0</div>
+    <div class="nav">
+      <button id="firstUnlabeled">Next unlabeled</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" id="cards"></div>
+
+<footer>
+  <div class="frow">
+    <button id="prev">‹ Prev</button>
+    <span>Page <input class="jump" id="jump" type="number" min="1"> / <span id="pages">0</span></span>
+    <button id="next">Next ›</button>
+  </div>
+</footer>
+
+<script>
+const PAGE_SIZE = 10;
+let DATA = [], LABELS = {}, page = 0;
+
+const el = (h)=>{const d=document.createElement('div');d.innerHTML=h;return d.firstElementChild;};
+const esc = (s)=> (s==null?'':String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+async function init(){
+  DATA = await (await fetch('/data')).json();
+  LABELS = await (await fetch('/load')).json();
+  document.getElementById('pages').textContent = Math.ceil(DATA.length/PAGE_SIZE);
+  document.getElementById('jump').max = Math.ceil(DATA.length/PAGE_SIZE);
+  const firstU = DATA.findIndex(r=>!LABELS[r.id]);
+  page = firstU>=0 ? Math.floor(firstU/PAGE_SIZE) : 0;
+  render(); updateProgress();
+}
+
+function labeled(r){const l=LABELS[r.id]; return l && (l.gold_agent || l.unsure);}
+
+function updateProgress(){
+  const done = DATA.filter(labeled).length;
+  document.getElementById('count').textContent = `${done} / ${DATA.length}`;
+  document.getElementById('barfill').style.width = (100*done/DATA.length)+'%';
+}
+
+function render(){
+  const wrap = document.getElementById('cards'); wrap.innerHTML='';
+  const start = page*PAGE_SIZE;
+  DATA.slice(start, start+PAGE_SIZE).forEach((r,i)=> wrap.appendChild(cardFor(r, start+i)));
+  document.getElementById('jump').value = page+1;
+  document.getElementById('prev').disabled = page===0;
+  document.getElementById('next').disabled = (page+1)*PAGE_SIZE >= DATA.length;
+  document.getElementById('pages').textContent = Math.ceil(DATA.length/PAGE_SIZE);
+  window.scrollTo(0,0);
+}
+
+function cardFor(r, globalIdx){
+  const l = LABELS[r.id] || {};
+  const hist = (r.conversation_history||[]).map(m=>{
+    const who = (m.role==='user')?'user':'asst';
+    return `<div class="bub ${who}"><div class="who">${who==='user'?'Customer':'Bot'}</div>${esc(m.content)}</div>`;
+  }).join('');
+  const agents = (r.available_agents||[]).map(a=>{
+    const sel = l.gold_agent===a.agentName ? 'sel':'';
+    return `<label class="opt ${sel}" data-v="${esc(a.agentName)}">
+      <input type="radio" name="sel_${r.id}" value="${esc(a.agentName)}" ${sel?'checked':''}>
+      <div><div class="an">${esc(a.agentName)}</div><div class="ad">${esc(a.description)}</div></div></label>`;
+  }).join('');
+  const noneSel = l.unsure ? 'sel':'';
+  const card = el(`<div class="card ${labeled(r)?'done':''}" id="card_${r.id}">
+    <div class="meta">
+      <span class="tag brand">${esc(r.brand)}</span>
+      <span class="tag prev">prev: ${esc(r.previous_agent||'none')}</span>
+      <span class="tag">turn ${esc(r.turn_index)}</span>
+      <span class="idx">#${globalIdx+1} of ${DATA.length}</span>
+    </div>
+    <div class="hist">${hist || '<div class="nohist">(no earlier conversation)</div>'}</div>
+    <div class="cur"><div class="lbl">Current message — route this</div><div class="msg">${esc(r.current_message)}</div></div>
+    <div class="opts">
+      ${agents}
+      <label class="opt none ${noneSel}" data-v="__UNSURE__">
+        <input type="radio" name="sel_${r.id}" value="__UNSURE__" ${noneSel?'checked':''}>
+        <div><div class="an">🚫 Unsure / none of these fit</div></div></label>
+    </div>
+    <textarea class="notes" placeholder="Notes (optional)">${esc(l.notes||'')}</textarea>
+    <div class="saved" id="saved_${r.id}">${labeled(r)?'✓ saved':''}</div>
+  </div>`);
+
+  card.querySelectorAll(`input[name="sel_${r.id}"]`).forEach(inp=>{
+    inp.addEventListener('change',()=>{
+      card.querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel', o.dataset.v===inp.value));
+      save(r.id, card);
+    });
+  });
+  let t; card.querySelector('.notes').addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>save(r.id,card),500);});
+  return card;
+}
+
+async function save(id, card){
+  const picked = card.querySelector(`input[name="sel_${id}"]:checked`);
+  const v = picked ? picked.value : null;
+  const rec = {
+    id,
+    gold_agent: (v && v!=='__UNSURE__') ? v : null,
+    unsure: v==='__UNSURE__',
+    notes: card.querySelector('.notes').value
+  };
+  LABELS[id] = rec;
+  card.classList.toggle('done', !!(rec.gold_agent||rec.unsure));
+  const s = document.getElementById('saved_'+id); s.textContent='saving…';
+  try{
+    await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(rec)});
+    s.textContent='✓ saved';
+  }catch(e){ s.textContent='⚠ save failed'; }
+  updateProgress();
+}
+
+document.getElementById('prev').onclick=()=>{if(page>0){page--;render();}};
+document.getElementById('next').onclick=()=>{if((page+1)*PAGE_SIZE<DATA.length){page++;render();}};
+document.getElementById('jump').onchange=(e)=>{const p=Math.min(Math.max(1,+e.target.value||1),Math.ceil(DATA.length/PAGE_SIZE));page=p-1;render();};
+document.getElementById('firstUnlabeled').onclick=()=>{const i=DATA.findIndex(r=>!labeled(r));if(i>=0){page=Math.floor(i/PAGE_SIZE);render();}};
+
+init();
+</script>
+</body>
+</html>

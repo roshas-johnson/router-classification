@@ -20,7 +20,7 @@ from pathlib import Path
 
 import requests
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "test_data" / "router_runs_2026-09-19_2026-09-21.json"
 INTERNAL_DESC = ROOT / "bob-level-data" / "internal-agent-descriptions.json"
 OUT = ROOT / "brands_level_ai_info.json"
